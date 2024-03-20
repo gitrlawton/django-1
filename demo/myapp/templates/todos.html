@@ -1,0 +1,16 @@
+<!-- This page displays our Todo List -->
+
+<h1>Todo List</h1>
+
+<!-- This is a for loop that takes in a queryset of TodoItem objects. -->
+<!-- For each todo list item... -->
+{% for todo in todos %}
+<li>
+    <!-- Display the todo's title, followed by a colon, followed by  -->
+    <!-- the word "Completed" if its completed instance variable is  -->
+    <!-- True, or "Not Completed" if its completed instance variable -->
+    <!-- is False.  Place this text inside <li> tags, making it a    -->
+    <!-- list item. -->
+    {{ todo.title }}: {% if todo.completed %}Completed{% else %}Not Completed{% endif %}
+</li>
+{% endfor %}
